@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admin - Criar perfil Google</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main style="padding: 2rem;">
+    <h1>Criar perfil no Google (Business Profile)</h1>
+    <p>Passo 1: clique em <strong>Autorizar</strong> para conectar a conta Google.</p>
+    <p><a class="btn primary" href="http://localhost:3000/auth/google" target="_blank">Autorizar no Google</a></p>
+
+    <hr />
+
+    <h2>Passo 2: Criar local</h2>
+    <form id="create-location-form">
+      <label>Nome do local<br /><input name="locationName" required /></label><br />
+      <label>Telefone principal<br /><input name="primaryPhone" /></label><br />
+      <label>Website<br /><input name="websiteUri" /></label><br />
+      <label>Categoria (displayName)<br /><input name="primaryCategory" placeholder="Ex: Restaurante" /></label><br />
+      <label>Endereço (linhas)<br /><input name="addressLines" placeholder="Rua X, 123" /></label><br />
+      <label>Cidade (locality)<br /><input name="locality" /></label><br />
+      <label>Estado (administrativeArea)<br /><input name="administrativeArea" /></label><br />
+      <label>CEP (postalCode)<br /><input name="postalCode" /></label><br />
+      <label>País (regionCode)<br /><input name="regionCode" value="BR" /></label><br />
+      <button class="btn primary" type="submit">Criar local no Google</button>
+    </form>
+
+    <pre id="result" style="margin-top:1rem;white-space:pre-wrap"></pre>
+
+    <hr />
+    <h3>Debug</h3>
+    <p><a class="btn ghost" href="/auth/tokens" target="_blank">Ver tokens (dev)</a> <a class="btn ghost" href="#" id="trigger-refresh">Forçar refresh (dev)</a></p>
+    <script>
+      document.getElementById('trigger-refresh').addEventListener('click', async (e) => {
+        e.preventDefault();
+        try {
+          const r = await fetch('/auth/refresh', { method: 'POST' });
+          const j = await r.json();
+          alert(JSON.stringify(j));
+        } catch (err) { alert('Erro: ' + err.message); }
+      });
+    </script>
+
+    <hr />
+
+    <h2>Passo 3: Enviar fotos para o local</h2>
+    <p>Após criar um local, copie o <code>locationId</code> do resultado e use a ferramenta de upload.</p>
+    <p><a class="btn ghost" href="/admin-photos.html" target="_blank">Abrir envio de fotos</a></p>
+  </main>
+  <script src="admin.js"></script>
+</body>
+</html>

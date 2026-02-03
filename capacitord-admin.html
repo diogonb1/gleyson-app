@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>App: Autenticação Google (Capacitor)</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main style="padding:2rem;">
+    <h1>Fluxo OAuth (Capacitor)</h1>
+    <p>Usa o plugin Capacitor App para capturar o redirect com o code e troca via backend.</p>
+
+    <button id="authorize" class="btn primary">Autorizar Google (abrir)</button>
+    <pre id="log" style="margin-top:1rem;white-space:pre-wrap"></pre>
+
+    <h2>Observações</h2>
+    <ul>
+      <li>Configure o redirect URI no Google Cloud para o esquema custom do app (ex: <code>gleyson://auth/callback</code>).</li>
+      <li>No `server/.env`, defina `REDIRECT_URI` para a mesma URI usada no projeto do Google.</li>
+      <li>Android: adicione um <code>&lt;intent-filter&gt;</code> na sua <code>MainActivity</code> para capturar <code>gleyson://auth/callback</code> (ex.: já foi adicionado em <code>android/app/src/main/AndroidManifest.xml</code>).</li>
+      <li>iOS: adicione o esquema no <code>Info.plist</code> (ex.: já foi adicionado em <code>ios/App/App/Info.plist</code>).</li>
+    </ul>
+  </main>
+  <script src="capacitord-admin.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+﻿# App Store Listing - Gleyson Cabeleireiros e Rafaela Bruna Concept
+
+## Nome do app
+Gleyson Cabeleireiros
+
+## Subtítulo (até 30 caracteres)
+Beleza premium em Araguari
+
+## Promoção (até 170 caracteres)
+Agende com rapidez, veja serviços e encontre o salão no mapa. Atendimento especializado em pele negra, visagismo e maquiagem.
+
+## Descrição
+Gleyson Cabeleireiros e Rafaela Bruna Concept é um salão premium em Araguari-MG, especializado em pele negra, visagismo, coloração, corte e maquiagem. Atendimento pensado para valorizar sua beleza natural com técnica e cuidado.
+
+No app, você pode:
+- Agendar rapidamente pelo WhatsApp
+- Ver serviços e especialidades
+- Conferir o portfólio
+- Localizar o salão no mapa
+
+Endereço: Av. Sen. Melo Viana, 516 - Goiás, Araguari - MG
+Contato: (34) 98854-2380
+E-mail: diogonb2@gmail.com
+
+## Palavras-chave (separadas por vírgula)
+beleza, salão, cabelo, maquiagem, coloração, visagismo, pele negra, tranças
+
+## Política de privacidade
+Arquivo: web/politica.html
+

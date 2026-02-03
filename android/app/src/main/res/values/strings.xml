@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Gleyson Cabeleireiros</string>
+    <string name="title_activity_main">Gleyson Cabeleireiros</string>
+    <string name="package_name">com.gleyson.cabeleireiros</string>
+    <string name="custom_url_scheme">com.gleyson.cabeleireiros</string>
+</resources>

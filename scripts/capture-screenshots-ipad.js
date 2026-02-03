@@ -1,0 +1,41 @@
+﻿const { chromium } = require('playwright');
+const path = require('path');
+const fs = require('fs');
+
+const fileUrl = 'file:///' + path.resolve(__dirname, '..', 'web', 'index.html').replace(/\\/g, '/');
+
+const targets = [
+  { dir: 'screenshots-ipad-12-9', width: 2048, height: 2732 },
+  { dir: 'screenshots-ipad-11', width: 1668, height: 2388 },
+];
+
+const shots = [
+  { name: '01-home.png', selector: 'body' },
+  { name: '02-servicos.png', selector: '#servicos' },
+  { name: '03-agenda.png', selector: '#agenda' },
+  { name: '04-local.png', selector: '#local' },
+];
+
+(async () => {
+  const browser = await chromium.launch();
+  for (const target of targets) {
+    const outDir = path.resolve(__dirname, '..', 'play-store', target.dir);
+    fs.mkdirSync(outDir, { recursive: true });
+    const page = await browser.newPage({ viewport: { width: target.width, height: target.height }, deviceScaleFactor: 2 });
+    await page.goto(fileUrl, { waitUntil: 'networkidle' });
+    await page.waitForTimeout(900);
+
+    for (const shot of shots) {
+      if (shot.selector !== 'body') {
+        await page.evaluate((sel) => document.querySelector(sel).scrollIntoView({ behavior: 'instant', block: 'start' }), shot.selector);
+        await page.waitForTimeout(500);
+      } else {
+        await page.evaluate(() => window.scrollTo(0, 0));
+        await page.waitForTimeout(300);
+      }
+      await page.screenshot({ path: path.join(outDir, shot.name), fullPage: false });
+    }
+    await page.close();
+  }
+  await browser.close();
+})();

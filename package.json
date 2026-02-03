@@ -1,0 +1,25 @@
+{
+  "name": "gleyson-app-deployer",
+  "version": "1.0.0",
+  "description": "Script para publicar o site do Gleyson Cabeleireiros.",
+  "main": "deploy-web.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "node deploy-web.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@capacitor/android": "^6.0.0",
+    "@capacitor/cli": "^6.0.0",
+    "@capacitor/core": "^6.0.0",
+    "@capacitor/ios": "^6.0.0",
+    "sharp": "^0.34.5"
+  },
+  "devDependencies": {
+    "@capacitor/assets": "^3.0.5",
+    "playwright": "^1.58.0"
+  }
+}

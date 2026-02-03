@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admin - Upload de Fotos</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main style="padding:2rem;">
+    <h1>Enviar fotos para um local</h1>
+    <p>Insira o <strong>locationId</strong> (retornado ao criar o local) e envie fotos.</p>
+    <form id="upload-form">
+      <label>Location ID<br /><input name="locationId" required /></label><br />
+      <label>Fotos (máx 10)<br /><input type="file" name="photos" multiple accept="image/*" /></label><br />
+      <button class="btn primary" type="submit">Enviar fotos</button>
+    </form>
+
+    <pre id="result" style="margin-top:1rem;white-space:pre-wrap"></pre>
+  </main>
+  <script src="admin-photos.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+# Node and environment
+node_modules/
+.env
+
+# Backend server
+/server/node_modules/
+/server/.env
+/server/tokens.json
+/server/tmp_uploads/
+/tmp_uploads/
+
+# Capacitor build outputs
+android/build/
+ios/App/Pods/
+
+# Gradle caches and temp
+.gradle/
+.gradle-local/
+**/build/
+**/tmp/
+
+# Android specific
+local.properties
+*.keystore
+
+# iOS Xcode
+DerivedData/
+*.xcworkspace
+Pods/
+
+# IDEs/editors
+.vscode/
+.idea/
+
+# Keep politica.html explicitly
+!/politica.html
+
